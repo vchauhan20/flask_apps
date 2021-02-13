@@ -9,7 +9,7 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def second():
-    return render_template('index.html')
+    return render_template('chart.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
