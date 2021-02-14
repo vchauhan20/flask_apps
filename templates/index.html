@@ -2,16 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+        <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+         <script>
+      anychart.onDocumentReady(function() {
+
+        // set the data
+        var data = {
+            header: ["Name", "sentiment"],
+            rows: [
+              ["Positive", {{positive}}],
+              ["Negative", {{negative}}],
+
+
+        ]};
+
+        // create the chart
+        var chart = anychart.bar();
+
+        // add the data
+        chart.data(data);
+
+        // set the chart title
+        chart.title("Sentiment Break Down");
+
+        // draw
+        chart.container("container");
+        chart.draw();
+      });
+    </script>
     <title>index</title>
+    <style>
+        .anychart-credits-text{
+      display: none !important;
+    } .anychart-credits-logo{
+      display: none !important;
+          }
+        input{
+            width: 30%;
+            height: 4rem;
+            font-size: 20px;
+            overflow-wrap: break-word;
+        }
+        button{
+            width: 10%;
+            height: 2rem;
+        }
+    </style>
 </head>
 <body>
 <p> "hi Welcome"</p>
 <br><br>
 
-<form method="post" action="{{url_for('second')}}">
-<input type="text"  name="First Text" placeholder="First Text" />
+<form method="post"  action="{{url_for('second')}}">
+<input type="text"  rows=30 cols=10 name="Text" placeholder="Enter  Text" />
+    <br>
+    <br>
     <button type="submit" >Enter </button>
 </form>
+
+<title>JavaScript Bar Chart</title>
+
+
+
+    <div id="container" style="width: 50%; height: 600px"></div>
+
 
 </body>
 </html>
