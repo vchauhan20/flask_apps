@@ -3,5 +3,5 @@ certifi==2019.11.28
 itsdangerous==1.1.0
 Jinja2==2.10.1
 gunicorn==19.9.0
-tensorflow==2.0.0
+tensorflow==2.4
 joblib==1.0.1
