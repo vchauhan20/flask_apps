@@ -4,6 +4,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 def create_model():
     model = load_model('model.hdf5')
+    print(model.outputs)
     return model
 
 def preprocess_data(input_str,tokenizer):
